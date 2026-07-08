@@ -11,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/"Component={DefaultLayout}>
             <Route index Component={Home}/>
+            <Route path="/MovieDetails/:id" Component={MovieDetails}/>
           </Route>
         </Routes>
       </BrowserRouter>
