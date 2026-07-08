@@ -7,10 +7,6 @@ export default function NavBar() {
          
         <nav style={{ display: "flex", gap: "50px", padding: "10px", background: "#eee", textDecoration: "none"}}>
             <NavLink to="/" className="navlink" style={{ color: "black" }}> HOME </NavLink>
-
-            <NavLink to="MovieDetails" className="navlink" style={{ color: "black" }}> PIU' DETTAGLI</NavLink>
-
-           
         </nav>
     );
     
