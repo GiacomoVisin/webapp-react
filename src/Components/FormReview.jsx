@@ -46,7 +46,7 @@ export default function FormReview({ movieId, onReviewSuccess }) {
 
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                    <label className="form-label fw-bold">Nome</label>
+                    <label className="form-label fw-bold">Nome *</label>
                     <input 
                         type="text" 
                         className="form-control" 
@@ -57,12 +57,8 @@ export default function FormReview({ movieId, onReviewSuccess }) {
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label fw-bold">Voto</label>
-                    <select 
-                        className="form-select" 
-                        value={vote} 
-                        onChange={(e) => setVote(e.target.value)}
-                    >
+                    <label className="form-label fw-bold">Voto *</label>
+                    <select className="form-select"  value={vote} onChange={(e) => setVote(e.target.value)}>
                         <option value="1">1 ⭐</option>
                         <option value="2">2 ⭐</option>
                         <option value="3">3 ⭐</option>
@@ -73,13 +69,7 @@ export default function FormReview({ movieId, onReviewSuccess }) {
 
                 <div className="mb-3">
                     <label className="form-label fw-bold">La tua Recensione</label>
-                    <textarea 
-                        className="form-control" 
-                        rows="3" 
-                        value={text} 
-                        onChange={(e) => setText(e.target.value)}
-                        placeholder="Cosa ne pensi di questo film?"
-                    ></textarea>
+                    <textarea className="form-control" rows="3" value={text} onChange={(e) => setText(e.target.value)}placeholder="Cosa ne pensi di questo film?"></textarea>
                 </div>
 
                 <button type="submit" className="btn btn-success w-100">Invia Recensione</button>
