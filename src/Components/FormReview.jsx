@@ -7,12 +7,19 @@ export default function FormReview({ movieId, onReviewSuccess }) {
     const [text, setText] = useState("");
     const [vote, setVote] = useState(5); 
     const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setSuccess(false);
 
-      
+    
+        
+    if (name = "" ) {
+            setError("Tutti i campi sono obbligatori!");
+            return;
+        }
+
         const reviewData = {
             name: name,
             text: text,
