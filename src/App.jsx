@@ -3,7 +3,7 @@ import DefaultLayout from './Layout/DefaultLayout.jsx'
 import Home from './Components/Home.jsx'
 import MovieDetails from './Pages/MovieDetails.jsx'
 import FormReview from './Components/FormReview.jsx'
-
+import AddMoviesForm from './Components/addMoviesForm.jsx'
 
 
 function App() {
@@ -12,10 +12,11 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/"Component={DefaultLayout}>
-            <Route index Component={Home}/>
-            <Route path="/MovieDetails/:id" Component={MovieDetails}/>
-            <Route path="/FormReview" Component={FormReview}/>
+          <Route path="/"element={<DefaultLayout/>}>
+            <Route index element={<Home/>}/>
+            <Route path="/MovieDetails/:id" element={<MovieDetails/>}/>
+            <Route path="/FormReview" element={<FormReview/>}/>
+            <Route path="/AddMoviesForm" element={<AddMoviesForm/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
