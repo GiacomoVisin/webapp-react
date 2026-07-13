@@ -15,7 +15,7 @@ export default function FormReview({ movieId, onReviewSuccess }) {
 
     
         
-    if (name = "" ) {
+    if (name === "" ) {
             setError("Tutti i campi sono obbligatori!");
             return;
         }

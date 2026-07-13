@@ -4,6 +4,9 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import FormReview from "../Components/FormReview";
 
+
+
+
 export default function MovieDetails({fetchMovieDetails}) {
 
     const { id } = useParams();
@@ -26,6 +29,7 @@ export default function MovieDetails({fetchMovieDetails}) {
 
     return (
         <>
+
             <div className="container text-center">
                 <MovieCard movie={movie} key={movie.id} isDetail={true} />
             </div>
