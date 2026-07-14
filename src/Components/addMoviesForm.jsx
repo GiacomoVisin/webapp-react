@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 
-export default function AddMoviesForm({Loader}) {
+export default function AddMoviesForm({ Loader, showLoader }) {
     const [title, setTitle] = useState("");
     const [director, setDirector] = useState("");
     const [genre, setGenre] = useState("");
@@ -31,14 +31,14 @@ export default function AddMoviesForm({Loader}) {
             setIsLoading(false);
         }, 30);
     }, []);
-    
+
 
     return (
         <>
-            {isLoading && <div className="container text-center"><Loader/></div>}
+            <div className="container text-center">{showLoader ? isLoading && <Loader /> : null}  </div>
             <form onSubmit={handleSubmit} style={styles.form}>
                 <div style={styles.inputGroup}>
-                    <label htmlFor="title">Titolo:</label>
+                    <label id="title">Titolo:</label>
                     <input
                         id="title"
                         type="text"
@@ -49,7 +49,7 @@ export default function AddMoviesForm({Loader}) {
                 </div>
 
                 <div style={styles.inputGroup}>
-                    <label htmlFor="director">Regista:</label>
+                    <label id="director">Regista:</label>
                     <input
                         id="director"
                         type="text"
@@ -60,7 +60,7 @@ export default function AddMoviesForm({Loader}) {
                 </div>
 
                 <div style={styles.inputGroup}>
-                    <label htmlFor="genre">Genere:</label>
+                    <label id="genre">Genere:</label>
                     <input
                         id="genre"
                         type="text"
@@ -71,7 +71,7 @@ export default function AddMoviesForm({Loader}) {
                 </div>
 
                 <div style={styles.inputGroup}>
-                    <label htmlFor="image">Locandina (URL Immagine):</label>
+                    <label id="image">Locandina (URL Immagine):</label>
                     <input
                         id="image"
                         type="text"
@@ -81,7 +81,7 @@ export default function AddMoviesForm({Loader}) {
                 </div>
 
                 <div style={styles.inputGroup}>
-                    <label htmlFor="abstract">Trama / Abstract:</label>
+                    <label id="abstract">Trama / Abstract:</label>
                     <textarea
                         id="abstract"
                         value={abstract}
@@ -94,7 +94,7 @@ export default function AddMoviesForm({Loader}) {
                 <button type="submit" style={styles.button}>Aggiungi Film</button>
             </form>
 
-             <div className="container">   {success && <div className="alert alert-success p-2">Film inserito!</div>}  </div>
+            <div className="container">   {success && <div className="alert alert-success p-2">Film inserito!</div>}  </div>
         </>
     );
 }

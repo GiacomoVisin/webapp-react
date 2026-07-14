@@ -5,7 +5,7 @@ import { LineSpinner } from 'ldrs/react'
 import 'ldrs/react/LineSpinner.css'
 
 
-export default function Home({Loader}) {
+export default function Home({ Loader,showLoader }) {
 
     const [movies, setMovies] = useState([]);
     const api = "http://localhost:3000/index";
@@ -26,7 +26,7 @@ export default function Home({Loader}) {
     return (
         <>
             <div className="container text-center" >
-                {isLoading && <div className="container text-center"><Loader/></div>}
+                {showLoader ? isLoading && <Loader /> : null}
                 <h1> Benvenuto nella sezione Film </h1>
                 <p>
                     scopri i nostri Film e le loro caratteristiche
@@ -34,7 +34,7 @@ export default function Home({Loader}) {
             </div>
 
             <div className="container d-flex flex-wrap justify-content-center">
-                {movies.map((movie)=>(
+                {movies.map((movie) => (
                     <MovieCard movie={movie} key={movie.id} />
                 ))}
             </div>

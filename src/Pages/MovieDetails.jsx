@@ -7,7 +7,7 @@ import FormReview from "../Components/FormReview";
 
 
 
-export default function MovieDetails({fetchMovieDetails, Loader}) {
+export default function MovieDetails({fetchMovieDetails, Loader, showLoader}) {
 
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
@@ -31,7 +31,7 @@ export default function MovieDetails({fetchMovieDetails, Loader}) {
 
     return (
         <>
-              {isLoading && <div className="container text-center"><Loader/></div>}
+               {showLoader ? isLoading && <Loader /> : null}
             <div className="container text-center">
                 <MovieCard movie={movie} key={movie.id} isDetail={true} />
             </div>

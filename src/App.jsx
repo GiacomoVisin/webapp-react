@@ -14,10 +14,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/"element={<DefaultLayout/>}>
-            <Route index element={<Home Loader={Loader} />}/>
-            <Route path="/MovieDetails/:id" element={<MovieDetails Loader={Loader}/>}/>
+            <Route index element={<Home Loader={Loader} showLoader={true} />}/>
+            <Route path="/MovieDetails/:id" element={<MovieDetails Loader={Loader} showLoader={true}/>}/>
             <Route path="/FormReview" element={<FormReview/>}/>
-            <Route path="/AddMoviesForm" element={<AddMoviesForm Loader={Loader}/>}/>
+            <Route path="/AddMoviesForm" element={<AddMoviesForm Loader={Loader} showLoader={true}/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
