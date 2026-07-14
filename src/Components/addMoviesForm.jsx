@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
-export default function AddMoviesForm() {
+export default function AddMoviesForm({Loader}) {
     const [title, setTitle] = useState("");
     const [director, setDirector] = useState("");
     const [genre, setGenre] = useState("");
     const [abstract, setAbstract] = useState("");
     const [image, setImage] = useState("");
     const [success, setSuccess] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,8 +26,16 @@ export default function AddMoviesForm() {
         setSuccess(true);
     };
 
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 30);
+    }, []);
+    
+
     return (
         <>
+            {isLoading && <div className="container text-center"><Loader/></div>}
             <form onSubmit={handleSubmit} style={styles.form}>
                 <div style={styles.inputGroup}>
                     <label htmlFor="title">Titolo:</label>

@@ -1,14 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
 
-
 export default function FormReview({ movieId, onReviewSuccess }) {
+    
     // Stati per i campi del form
     const [name, setName] = useState("");
     const [text, setText] = useState("");
     const [vote, setVote] = useState(5);
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false)
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -35,6 +36,7 @@ export default function FormReview({ movieId, onReviewSuccess }) {
                 setName("");
                 setText("");
                 setVote(5);
+             
 
 
                 if (onReviewSuccess) {
@@ -47,7 +49,8 @@ export default function FormReview({ movieId, onReviewSuccess }) {
     };
 
     return (
-    
+        <>
+           
             <div className="card mt-4 p-4 text-start" style={{ backgroundColor: "#f8f9fa", border: "1px solid #ddd" }}>
                 <h4 className="mb-3">Lascia una recensione</h4>
 
@@ -84,6 +87,7 @@ export default function FormReview({ movieId, onReviewSuccess }) {
                     <button type="submit" className="btn btn-success w-100">Invia Recensione</button>
                 </form>
             </div>
-       
+        </>
+
     );
 }

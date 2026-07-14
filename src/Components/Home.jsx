@@ -5,7 +5,7 @@ import { LineSpinner } from 'ldrs/react'
 import 'ldrs/react/LineSpinner.css'
 
 
-export default function Home() {
+export default function Home({Loader}) {
 
     const [movies, setMovies] = useState([]);
     const api = "http://localhost:3000/index";
@@ -26,7 +26,7 @@ export default function Home() {
     return (
         <>
             <div className="container text-center" >
-                {isLoading && <div className="container"><LineSpinner size="60" stroke="3" speed="1" color="black"/></div>}
+                {isLoading && <div className="container text-center"><Loader/></div>}
                 <h1> Benvenuto nella sezione Film </h1>
                 <p>
                     scopri i nostri Film e le loro caratteristiche
