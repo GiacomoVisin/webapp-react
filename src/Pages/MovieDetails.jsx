@@ -7,16 +7,18 @@ import FormReview from "../Components/FormReview";
 
 
 
-export default function MovieDetails({fetchMovieDetails}) {
+export default function MovieDetails({fetchMovieDetails, Loader}) {
 
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const api = `http://localhost:3000/index/${id}`;
         axios.get(api)
             .then(response => {
                 setMovie(response.data);
+                setIsLoading(false);
             })
             .catch(error => {
                 console.error("Errore durante il recupero dei dettagli del film:", error);
@@ -29,7 +31,7 @@ export default function MovieDetails({fetchMovieDetails}) {
 
     return (
         <>
-
+              {isLoading && <div className="container text-center"><Loader/></div>}
             <div className="container text-center">
                 <MovieCard movie={movie} key={movie.id} isDetail={true} />
             </div>
