@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import { LineSpinner } from 'ldrs/react'
 import 'ldrs/react/LineSpinner.css'
-
+import Jumbotron from "../image/jumbotron.png"
 
 export default function Home({ Loader,showLoader }) {
 
@@ -27,8 +27,9 @@ export default function Home({ Loader,showLoader }) {
         <>
             <div className="container text-center" >
                 {showLoader ? isLoading && <Loader /> : null}
-                <h1> Benvenuto nella sezione Film </h1>
-                <p>
+                <img src={Jumbotron} alt="Jumbotron" className="img-fluid jumbotron" />
+                <h1 className ="text-white" > Benvenuto nella sezione Film </h1>
+                <p className ="text-white">
                     scopri i nostri Film e le loro caratteristiche
                 </p>
             </div>
