@@ -51,7 +51,7 @@ export default function FormReview({ movieId, onReviewSuccess }) {
     return (
         <>
            
-            <div className="card mt-4 p-4 text-start" style={{ backgroundColor: "#f8f9fa", border: "1px solid #ddd" }}>
+            <div className="card mt-4 p-4 text-white" style={{ backgroundColor: "#3b134b", border: "1px solid #450a68" }}>
                 <h4 className="mb-3">Lascia una recensione</h4>
 
                 {success && <div className="alert alert-success p-2">Recensione inserita!</div>}
@@ -61,7 +61,7 @@ export default function FormReview({ movieId, onReviewSuccess }) {
                         <label className="form-label fw-bold">Nome *</label>
                         <input
                             type="text"
-                            className="form-control"
+                            className="form-control "
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder="Inserisci il tuo nome"
@@ -84,7 +84,7 @@ export default function FormReview({ movieId, onReviewSuccess }) {
                         <textarea className="form-control" rows="3" value={text} onChange={(e) => setText(e.target.value)} placeholder="Cosa ne pensi di questo film?"></textarea>
                     </div>
 
-                    <button type="submit" className="btn btn-success w-100">Invia Recensione</button>
+                    <button type="submit" className="btn btn-success w-100 mt-2">Invia Recensione</button>
                 </form>
             </div>
         </>
