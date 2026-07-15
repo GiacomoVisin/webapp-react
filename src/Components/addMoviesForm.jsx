@@ -35,10 +35,12 @@ export default function AddMoviesForm({ Loader, showLoader }) {
 
     return (
         <>
+
             <div className="container text-center">{showLoader ? isLoading && <Loader /> : null}  </div>
+            <h1 className="text-center text-white mt-2"> FORM PER AGGIUNTA DI FILM</h1>
             <form onSubmit={handleSubmit} style={styles.form}>
                 <div style={styles.inputGroup}>
-                    <label id="title">Titolo:</label>
+                    <label id="title" className="text-white">Titolo:</label>
                     <input
                         id="title"
                         type="text"
@@ -49,7 +51,7 @@ export default function AddMoviesForm({ Loader, showLoader }) {
                 </div>
 
                 <div style={styles.inputGroup}>
-                    <label id="director">Regista:</label>
+                    <label id="director" className="text-white">Regista:</label>
                     <input
                         id="director"
                         type="text"
@@ -60,7 +62,7 @@ export default function AddMoviesForm({ Loader, showLoader }) {
                 </div>
 
                 <div style={styles.inputGroup}>
-                    <label id="genre">Genere:</label>
+                    <label id="genre" className="text-white">Genere:</label>
                     <input
                         id="genre"
                         type="text"
@@ -71,7 +73,7 @@ export default function AddMoviesForm({ Loader, showLoader }) {
                 </div>
 
                 <div style={styles.inputGroup}>
-                    <label id="image">Locandina (URL Immagine):</label>
+                    <label id="image" className="text-white">Locandina (URL Immagine):</label>
                     <input
                         id="image"
                         type="text"
@@ -81,7 +83,7 @@ export default function AddMoviesForm({ Loader, showLoader }) {
                 </div>
 
                 <div style={styles.inputGroup}>
-                    <label id="abstract">Trama / Abstract:</label>
+                    <label id="abstract" className="text-white">Trama / Abstract:</label>
                     <textarea
                         id="abstract"
                         value={abstract}
