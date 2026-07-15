@@ -1,4 +1,85 @@
-.right{
-    position: relative;
-    left: 70%
+/*  BODY   */
+
+body {
+    background: linear-gradient(to right, #1d2e66, #3d1842);
 }
+
+
+/*  JUMBOTRON   */
+
+.jumbotron {
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+
+
+/*  NAVBAR  */
+
+
+nav {
+    background-color: #3d1842;
+}
+
+.border {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    background-color: white
+}
+
+
+.right {
+    position: relative;
+    left: 75%
+}
+
+
+
+/* CARD  */
+
+.card {
+    background-color: #3d184257;
+    border: 1px solid rgb(53, 3, 59);
+    border-radius: 30px;
+
+    p {
+        color: white;
+
+    }
+
+    h1 {
+        color: white;
+    }
+}
+
+.card-btn {
+    background-color: #3d1842;
+    color: white;
+    border: 1px solid rgb(53, 3, 59);
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.card-btn:hover {
+    background-color: rgba(92, 14, 155, 0.644);
+    color: white;
+    border: 1px solid rgb(53, 3, 59);
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+
